@@ -26,7 +26,7 @@ class Node {
 class Tree {
     Node node;
     public Node getRoot() {
-        return root;
+        return node;
     };
     public void setRoot(Node root) {
         this.node = root;
