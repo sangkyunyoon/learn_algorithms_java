@@ -30,3 +30,5 @@ I
 learn_algorithms_java.iml,c/a/ca237a3ee96578cc3a1799d1c80c25c216a6902d
 M
 src/acmicpc/Problem10866.java,8/d/8d8275574497d7b6846635c9b0ff7d0faa6573be
+M
+src/rmq/rmq_segment_tree.java,2/1/219f0f87afb81fbf29e4718c2293a2eab72cec30

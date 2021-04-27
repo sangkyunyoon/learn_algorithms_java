@@ -1,108 +1,41 @@
 package rmq;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 public class rmq_segment_tree {
-    public static void nain(String[] args) throws IOException {
-        /*
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer nm = new StringTokenizer(br.readLine());
-        int N = Integer.valueOf(nm.nextToken());
-        int M = Integer.valueOf(nm.nextToken());
-        */
-        /**
-         * 75, 30, 100, 38, 50, 51, 52, 20, 81, 5
-         */
-        int a[] = new int[]{75, 30, 100, 38, 50, 51, 52, 20, 81, 5};
-        Tree t = new Tree();
-        //t.init(a, 0, a.length - 1);
-
-    }
-    static int[] arr;
-    static int[] segTree1;
-    static int[] segTree2;
-    static int N, M, a, b;
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static String[] sArr;
-    
-    static int makeTree1(int idx, int start, int end){
-        int mid = (start + end) / 2;
+    public static void main(String[] args) throws IOException {
+        SegmentTree t = new SegmentTree();
+        t.init(0, 11, 1);
+        t.printTree();
+        System.out.println("0부터 12까지의 구간 합: " + t.sum(0, 11, 1, 0, 12));
+        System.out.println("3부터 8까지의 구간 합: " + t.sum(0, 11, 1, 3, 8));
         
-        if(start == end)
-            return segTree1[idx] = arr[start];
-        else
-            return segTree1[idx] = Math.max(makeTree1(2 * idx, start, mid), makeTree1(2 * idx + 1, mid + 1, end));     
-    }
-    
-    static int makeTree2(int idx, int start, int end){
-        int mid = (start + end) / 2;
-        
-        if(start == end)
-            return segTree2[idx] = arr[start];
-        else
-            return segTree2[idx] = Math.min(makeTree2(2 * idx, start, mid), makeTree2(2 * idx + 1, mid + 1, end));     
-    }
-    
-    static int findTree1(int idx, int start, int end, int fs, int fe){
-        if(fe < start || fs > end)
-            return 0;
-        else if(fs <= start && end <= fe)
-            return segTree1[idx];
-        else{
-            int mid = (start + end) / 2;
-            return Math.max(findTree1(2 * idx, start, mid, fs, fe), findTree1(2 * idx + 1, mid + 1, end, fs, fe));    
-        }
-    }
-    
-    static int findTree2(int idx, int start, int end, int fs, int fe){
-        if(fe < start || fs > end)
-            return 1000000000;
-        else if(fs <= start && end <= fe)
-            return segTree2[idx];
-        else{
-            int mid = (start + end) / 2;
-            return Math.min(findTree2(2 * idx, start, mid, fs, fe), findTree2(2 * idx + 1, mid + 1, end, fs, fe));    
-        }
-    }
-    
-    public static void main (String[] args) throws java.lang.Exception
-    {
-        sArr = br.readLine().split(" ");
-        
-        N = Integer.valueOf(sArr[0]);
-        M = Integer.valueOf(sArr[1]);
-        
-        arr = new int[N + 1];
-        segTree1 = new int[4 * (N + 1)];
-        segTree2 = new int[4 * (N + 1)];
-        
-        for(int i = 1; i < arr.length; i++)
-            arr[i] = Integer.valueOf(br.readLine());
-            
-        makeTree1(1, 1, N);
-        makeTree2(1, 1, N);
-        
-        for(int i = 0; i < M; i++){
-            sArr = br.readLine().split(" ");
-            
-            a = Integer.valueOf(sArr[0]);
-            b = Integer.valueOf(sArr[1]);
-            
-            bw.write(findTree2(1, 1, N, a, b) + " ");
-            bw.write(findTree1(1, 1, N, a, b) + "\n");
-        }
-        bw.flush();
     }
 }
-//https://stack07142.tistory.com/216
 class SegmentTree {
-    int[] segArr;
-    public SegmentTree(int arr, int n) {
-        segArr = new int[n * 4];
+    int tree[] = new int[32];
+    //int a[] = {5, 8, 7, 3, 2, 5, 1, 8, 9, 8, 7, 3};
+    int a[] = {1, 9, 3, 8, 4, 5, 5, 9, 10, 3, 4, 5};
+    public int init(int start, int end, int node) {
+        if(start == end) {
+            return tree[node] = a[start];
+        }
+        int mid = (start + end) / 2;
+        return tree[node] = init(start, mid, node * 2) + init(mid + 1, end, node * 2 + 1);
+    }
+    public void printTree() {
+        for(int i=1;i<a.length;i++) {
+            System.out.println("node=" + i + ", tree=" + tree[i]);
+        }
+    }
+    public int sum(int start, int end, int node, int left, int right) {
+        if(left > end || right < start) {
+            return 0;
+        }
+        if(left <= start && right >= end) {
+            return tree[node];
+        }
+        int mid = (start + end) / 2;
+        return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);
     }
 }

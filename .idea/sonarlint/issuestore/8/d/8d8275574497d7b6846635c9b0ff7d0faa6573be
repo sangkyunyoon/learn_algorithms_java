@@ -1,23 +1,23 @@
 
-Q
-java:S1128	"6Remove this unused import 'java.util.StringTokenizer'.(ÈÄ¬ñşÿÿÿÿ
-Z	java:S1064"9Replace this use of System.out or System.err by a logger.(¾’Åúüÿÿÿÿ8÷”ÅÃ†/
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û“óÊ8‹”ÃÃ†/
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(œû¿Ø8‹”ÃÃ†/
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(ŞñÂÏ8÷”ÅÃ†/
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ºñÊ½ÿÿÿÿÿ8÷”ÅÃ†/
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
 I
 java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¨—¸ûÿÿÿÿÿ8÷”ÅÃ†/
 Z	java:S106("9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
 V
 java:S2130"9Use "Integer.parseInt" for this string-to-int conversion.(û“óÊ8‹”ÃÃ†/
+Q
+java:S1128	"6Remove this unused import 'java.util.StringTokenizer'.(ÈÄ¬ñşÿÿÿÿ
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(¾’Åúüÿÿÿÿ8÷”ÅÃ†/
+U	java:S106?"9Replace this use of System.out or System.err by a logger.(Õ®«Ü8÷”ÅÃ†/
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û“óÊ8‹”ÃÃ†/
 U	java:S1061"9Replace this use of System.out or System.err by a logger.(…ãµş8÷”ÅÃ†/
 T	java:S1067"9Replace this use of System.out or System.err by a logger.(¸ØïU8÷”ÅÃ†/
-Z	java:S106E"9Replace this use of System.out or System.err by a logger.(«äîÖûÿÿÿÿ8÷”ÅÃ†/
-Z	java:S106+"9Replace this use of System.out or System.err by a logger.(ºñÊ½ÿÿÿÿÿ8÷”ÅÃ†/
-U	java:S106?"9Replace this use of System.out or System.err by a logger.(Õ®«Ü8÷”ÅÃ†/
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¨—¸ûÿÿÿÿÿ8÷”ÅÃ†/
-Z	java:S106/"9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
-U	java:S1069"9Replace this use of System.out or System.err by a logger.(ŞñÂÏ8÷”ÅÃ†/
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(œû¿Ø8‹”ÃÃ†/
-Z	java:S106C"9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
 Z	java:S106="9Replace this use of System.out or System.err by a logger.(¾ùê¤üÿÿÿÿ8÷”ÅÃ†/
+Z	java:S106E"9Replace this use of System.out or System.err by a logger.(«äîÖûÿÿÿÿ8÷”ÅÃ†/
